@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\GameController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,11 +48,9 @@ use App\Http\Controllers\ContactController;
 
 
 //Praktikum 3
-// Route::prefix('category')->group(function () {
-//     Route::get('/games/{category}', function ($category) {
-//         return 'games'.' '.$category;
-//     });
-// });
+Route::prefix('games')->group(function () {
+    Route::get('/{game}',[GameController::class, 'index']);
+});
 
  // Route::get('/news/{slug}', function ($slug) {
  // 	echo "Halaman news dengan slug ".$slug;
@@ -63,4 +62,4 @@ use App\Http\Controllers\ContactController;
 //      });
 //  });
 
-Route::resource('contact', ContactController::class);
+// Route::resource('contact', ContactController::class);
