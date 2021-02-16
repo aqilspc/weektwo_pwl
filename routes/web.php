@@ -5,6 +5,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,8 +57,10 @@ use App\Http\Controllers\AboutController;
  // 	echo "Halaman news dengan slug ".$slug;
  // });
 
-Route::prefix('program')->group(function ($category) {
-    Route::get('/category/{category}', function ($category) {
-        return $category;
-     });
- });
+// Route::prefix('program')->group(function ($category) {
+//     Route::get('/category/{category}', function ($category) {
+//         return $category;
+//      });
+//  });
+
+Route::resource('contact', ContactController::class);
