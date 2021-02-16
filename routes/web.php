@@ -43,3 +43,21 @@ use App\Http\Controllers\AboutController;
  // Route::get('/', [HomeController::class, 'index']);
  // Route::get('/about', [AboutController::class, 'about']);
  // Route::get('/articles/{id}', [ArticlesController::class, 'articles']);
+
+
+//Praktikum 3
+// Route::prefix('category')->group(function () {
+//     Route::get('/games/{category}', function ($category) {
+//         return 'games'.' '.$category;
+//     });
+// });
+
+ // Route::get('/news/{slug}', function ($slug) {
+ // 	echo "Halaman news dengan slug ".$slug;
+ // });
+
+Route::prefix('program')->group(function ($category) {
+    Route::get('/category/{category}', function ($category) {
+        return $category;
+     });
+ });
