@@ -8,7 +8,7 @@ class GameController extends Controller
 	public function index($game)
 	{
 		 $games='<a href="https://www.educastudio.com/category/'.$game.'">'.$game.'</a>';
-		 return redirect($games);
+		 return $games;
 
 	}
 }

@@ -7,6 +7,8 @@ use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ProgramController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,11 +41,15 @@ use App\Http\Controllers\GameController;
 
 //Praktikum 2
 // Route::get('/', [PageController::class, 'index']);
+
 // Route::get('/about', [PageController::class, 'about']);
+
 // Route::get('/articles/{id}', [PageController::class, 'articles']);
 
  // Route::get('/', [HomeController::class, 'index']);
+
  // Route::get('/about', [AboutController::class, 'about']);
+
  // Route::get('/articles/{id}', [ArticlesController::class, 'articles']);
 
 
@@ -52,14 +58,24 @@ Route::prefix('games')->group(function () {
     Route::get('/{game}',[GameController::class, 'index']);
 });
 
+Route::prefix('news')->group(function () {
+    Route::get('/{slug}',[NewsController::class, 'index']);
+});
+
  // Route::get('/news/{slug}', function ($slug) {
  // 	echo "Halaman news dengan slug ".$slug;
  // });
 
+Route::prefix('program')->group(function () {
+    Route::get('/{slug}',[ProgramController::class, 'index']);
+});
 // Route::prefix('program')->group(function ($category) {
 //     Route::get('/category/{category}', function ($category) {
 //         return $category;
 //      });
 //  });
 
-// Route::resource('contact', ContactController::class);
+Route::get('/about-us',[AboutController::class, 'index']);
+
+
+Route::resource('contact-us', ContactController::class);

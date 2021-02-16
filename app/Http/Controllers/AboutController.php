@@ -6,12 +6,18 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 // use App\Models\Desa;
 // use Auth;
-class PageController extends Controller
+class AboutController extends Controller
 {
-	public function about()
+	// public function about()
+	// {
+	// 	$nama = ' Abdulloh Aqil';
+	// 	$nim = '1941720064';
+	// 	return $nama.' '. $nim;
+	// }
+		public function index()
 	{
-		$nama = ' Abdulloh Aqil';
-		$nim = '1941720064';
-		return $nama.' '. $nim;
+		 $slugs='<a href="https://www.educastudio.com/about-us/">About-us</a>';
+		 return $slugs;
+
 	}
 }
